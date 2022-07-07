@@ -3,7 +3,7 @@ package shop.applesong.homework.domain;
 import lombok.Getter;
 
 @Getter
-public class HomeworkResponseDto {
+public class HomeworkResponseDto extends Timestamped {
 
     private Long id;
     private String username;
@@ -17,5 +17,6 @@ public class HomeworkResponseDto {
         this.contents = entity.getContents();
         this.title = entity.getTitle();
         this.password = entity.getPassword();
+        this.getCreatedAt();
     }
 }

@@ -9,6 +9,7 @@ import shop.applesong.homework.domain.HomeworkResponseDto;
 import shop.applesong.homework.service.HomeworkService;
 
 import java.util.List;
+import java.util.Optional;
 
 @RequiredArgsConstructor
 @RestController
@@ -29,12 +30,16 @@ public class HomeworkController {
     }
 
     @GetMapping("/api/homeworks/{id}")       //읽기 Read (Get타입) 게시글 개별조회
-    public HomeworkResponseDto detail(@PathVariable Long id) {
-        return homeworkService.detail(id);
+    public Optional<Homework> detail(@PathVariable Long id) {
+        return homeworkRepository.findById(id);
     }
+//    @GetMapping("/api/homeworks/{id}")       //읽기 Read (Get타입) 게시글 개별조회
+//    public HomeworkResponseDto detail(@PathVariable Long id) {
+//        return homeworkService.detail(id);
+//    }         //Dto 새로만들어서 불러오는방법. 작성시간을 불러오는 방버을 도저히 못찾겠어서 포기
 
     @DeleteMapping("/api/homeworks/{id}")
-    public Long deleteHomework(@PathVariable Long id) {
+    public Long deleteHomework(@PathVariable Long id)  {
         homeworkRepository.deleteById(id);
         return id;
     }
