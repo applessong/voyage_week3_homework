@@ -2,10 +2,9 @@ package shop.applesong.homework.Controllor;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-import shop.applesong.homework.domain.Homework;
-import shop.applesong.homework.domain.HomeworkRepository;
-import shop.applesong.homework.domain.HomeworkRequestDto;
-import shop.applesong.homework.domain.HomeworkResponseDto;
+import shop.applesong.homework.model.Homework;
+import shop.applesong.homework.repository.HomeworkRepository;
+import shop.applesong.homework.DTO.HomeworkRequestDto;
 import shop.applesong.homework.service.HomeworkService;
 
 import java.util.List;

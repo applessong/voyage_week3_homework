@@ -1,6 +1,7 @@
-package shop.applesong.homework.domain;
+package shop.applesong.homework.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import shop.applesong.homework.model.Homework;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script>
+    $(document).ready(function () {
+
+        $.ajax({
+            type: 'GET',
+            url: `/api/homeworks`,
+            success: function (response) {
+                for (let i = 0 ; i < response.length ; i++){
+                    let homework = response[i];
+                    let title = homework.title;
+                    let username = homework.username;
+                    let contents = homework.contents;
+                    let createdAt = homework.createdAt;
+                    let id = homework.id;
+                    addHTML(title, username, contents, createdAt,id);
+
+                }
+            }
+        });
+    });
+    function addHTML(title, username, contents, createdAt, id) {
+        let tempHtml = `
+        <div class="posting">
+            <div class="title">
+                <span style="font-size: 13px;">작성자: ${username}</span>
+                <span style="font-size: 12px;">작성시간: ${createdAt}</span>
+            </div>
+            <div>이거슨 제목: ${title}</div>
+            <div id="${id}-origin1">
+                 <span>내용물: ${contents}</span>
+            </div>
+
+            <!--
+            <div class ="origin2" id="${id}-origin2">
+                <input style="width:427px;" type="text" id="${id}-title" placeholder="제목"><br>
+                <textarea  style="width:430px; height:50px; resize: none; margin-top:3px;" id="${id}-content"  placeholder="내용"></textarea><br>
+            </div>
+            <div class="edit">
+                <input id="${id}-password" type="text" class="password" placeholder="비밀번호">
+                <button id="${id}-edit1" style="display:none;" onclick="editPost('${id}')">수정</button>
+                <button id="${id}-delete1" style="display:none;" onclick="showDelete('${id}')">삭제</button>
+                <button id="${id}-edit2" onclick="updatePosting('${id}')" class="editing">수정</button>
+                <button id="${id}-delete2" onclick="deletePosting('${id}')" class="delete">삭제</button>
+            </div>-->
+        </div>`;
+        $('#postings-box').append(tempHtml);
+    }
+  </script>
+</head>
+<body>
+<h1 th:text="${username}"></h1>
+
+<form id="my_form" method="post" action="/user/logout">
+    <a id="logout-text" href="javascript:{}" onclick="document.getElementById('my_form').submit();">로그아웃</a>
+</form>
+
+<div id="postings-box"></div>
+</body>
+</html>

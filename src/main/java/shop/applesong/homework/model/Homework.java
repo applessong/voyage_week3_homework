@@ -1,7 +1,8 @@
-package shop.applesong.homework.domain;
+package shop.applesong.homework.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import shop.applesong.homework.DTO.HomeworkRequestDto;
 
 import javax.persistence.*;
 

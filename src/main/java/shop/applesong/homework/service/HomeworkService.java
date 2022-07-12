@@ -2,13 +2,12 @@ package shop.applesong.homework.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import shop.applesong.homework.domain.Homework;
-import shop.applesong.homework.domain.HomeworkRepository;
-import shop.applesong.homework.domain.HomeworkRequestDto;
-import shop.applesong.homework.domain.HomeworkResponseDto;
+import shop.applesong.homework.model.Homework;
+import shop.applesong.homework.repository.HomeworkRepository;
+import shop.applesong.homework.DTO.HomeworkRequestDto;
+import shop.applesong.homework.DTO.HomeworkResponseDto;
 
 import javax.transaction.Transactional;
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service

@@ -1,6 +1,8 @@
-package shop.applesong.homework.domain;
+package shop.applesong.homework.DTO;
 
 import lombok.Getter;
+import shop.applesong.homework.model.Homework;
+import shop.applesong.homework.model.Timestamped;
 
 @Getter
 public class HomeworkResponseDto extends Timestamped {

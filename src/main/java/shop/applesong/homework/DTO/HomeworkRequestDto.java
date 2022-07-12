@@ -1,4 +1,4 @@
-package shop.applesong.homework.domain;
+package shop.applesong.homework.DTO;
 
 import lombok.Getter;
 
@@ -9,4 +9,5 @@ public class HomeworkRequestDto {
     private String contents;
     private String title;
     private String password;
+
 }

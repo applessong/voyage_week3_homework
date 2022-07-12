@@ -1,4 +1,4 @@
-package shop.applesong.homework.domain;
+package shop.applesong.homework.model;
 
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
