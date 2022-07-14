@@ -1,5 +1,6 @@
 package shop.applesong.homework.model;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import shop.applesong.homework.DTO.HomeworkRequestDto;
@@ -42,6 +43,8 @@ public class Homework extends Timestamped { // 생성,수정 시간을 자동으
         this.title = requestDto.getTitle();
         this.password = requestDto.getPassword();
     }
+
+
     public void update(HomeworkRequestDto requestDto) {
         this.username = requestDto.getUsername();
         this.contents = requestDto.getContents();

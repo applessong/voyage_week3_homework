@@ -1,6 +1,7 @@
 package shop.applesong.homework.Controllor;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import shop.applesong.homework.model.Homework;
 import shop.applesong.homework.repository.HomeworkRepository;
@@ -22,6 +23,9 @@ public class HomeworkController {
         Homework homework = new Homework(requestDto);
         return homeworkRepository.save(homework);
     }
+
+
+
 
     @GetMapping("/api/homeworks")       //읽기 Read (Get타입) 게시글 목록조회
     public List<Homework> getHomeworksList() {

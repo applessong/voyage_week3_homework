@@ -13,4 +13,9 @@ public class HomeController {
         model.addAttribute("username", userDetails.getUsername());
         return "index";
     }
+
+    @GetMapping("/posting")
+    public String posting() {
+        return "posting";
+    }
 }
